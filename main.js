@@ -65,7 +65,7 @@ app.on('ready',function(){
 		  app.quit();
 		}
 		
-		tray = new Tray(iconPath);
+		//tray = new Tray(iconPath);
 
 		log.transports.file.level = 'info';
 		log.transports.file.maxSize = 5 * 1024 * 1024;
@@ -181,8 +181,8 @@ function SetCron(sysKey){
 }
 
 function setGlobalVariable(){
-	tray.destroy();
-	tray = new Tray(iconPath);
+	//tray.destroy();
+	//tray = new Tray(iconPath);
 	display = electron.screen.getPrimaryDisplay();
 	width = display.bounds.width;
 
@@ -270,13 +270,13 @@ function setGlobalVariable(){
 			  app.quit();
 			}
 
-			tray.on('click', function(e){
-			    if (mainWindow.isVisible()) {
-			      mainWindow.hide();
-			    } else {
-			      mainWindow.show();
-			    }
-			});
+			// tray.on('click', function(e){
+			//     if (mainWindow.isVisible()) {
+			//       mainWindow.hide();
+			//     } else {
+			//       mainWindow.show();
+			//     }
+			// });
 
 
 			mainWindow.on('close', function (e) {
@@ -1543,18 +1543,18 @@ ipcMain.on('login_data',function(e,data){
 				//   loginWindow = null;
 				// });
 
-				tray.on('click', function(e){
-				    if (mainWindow.isVisible()) {
-				      mainWindow.hide();
-				    } else {
-				      mainWindow.show();
-				    }
-				});
+				// tray.on('click', function(e){
+				//     if (mainWindow.isVisible()) {
+				//       mainWindow.hide();
+				//     } else {
+				//       mainWindow.show();
+				//     }
+				// });
 
 				mainWindow.on('close', function (e) {
 					if (process.platform !== 'darwin') {
-				       app.quit();
-				    }
+				    app.quit();
+				  }
 				  // if (electron.app.isQuitting) {
 				  //  return
 				  // }
@@ -1861,13 +1861,13 @@ ipcMain.on('member_registration',function(e,form_data){
 				//   regWindow = null;
 				// });
 
-				tray.on('click', function(e){
-				    if (mainWindow.isVisible()) {
-				      mainWindow.hide()
-				    } else {
-				      mainWindow.show()
-				    }
-				});
+				// tray.on('click', function(e){
+				//     if (mainWindow.isVisible()) {
+				//       mainWindow.hide()
+				//     } else {
+				//       mainWindow.show()
+				//     }
+				// });
 
 				mainWindow.on('close', function (e) {
 				  if (electron.app.isQuitting) {
